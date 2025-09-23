@@ -4,6 +4,7 @@ body {
 .header {
   background-color: #ce2829;
   width: 100vw;
+  align-items: center;
 }
 .logo {
   display: block;
@@ -11,8 +12,9 @@ body {
   padding-top: 3rem;
 }
 .nav {
-  margin-left: 32rem;
-  padding-top: 2rem;
+  width: 33%;
+  margin: auto;
+  padding-top: 4rem;
   padding-bottom: 2rem;
   color: white;
 }
@@ -22,4 +24,11 @@ body {
 }
 .nav span {
   padding: 0 5px;
+}
+.order-pages {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
