@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+.header {
+  background-color: #ce2829;
+  width: 100vw;
+}
+.logo {
+  display: block;
+  margin: auto;
+  padding-top: 3rem;
+}
+.nav {
+  margin-left: 32rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+.nav a {
+  text-decoration: none;
+  color: white;
+}
+.nav span {
+  padding: 0 5px;
+}
