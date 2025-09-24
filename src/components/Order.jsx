@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/iteration-1-images/logo.svg";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Order.css";
+import Header from "./Header";
+import Select from "./MalzemeSelect";
 
 function Order() {
   return (
     <>
-      <header className="header">
-        <img src={logo} alt="Teknolojik Yemekler" className="logo" />
+      <Header />
+      <header className="nav-menu">
         <Router>
           <nav className="nav">
             <Link to="/">Ana Sayfa</Link>
@@ -73,6 +75,7 @@ function Order() {
           </form>
         </div>
       </div>
+      <Select />
     </>
   );
 }
