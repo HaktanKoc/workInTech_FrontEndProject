@@ -3,9 +3,43 @@ import logo from "../assets/iteration-1-images/logo.svg";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Order.css";
 import Header from "./Header";
-import Select from "./MalzemeSelect";
+import { ToastContainer } from "react-toastify";
 
 function Order() {
+  const maxMalzeme = 10;
+  const minMalzeme = 4;
+  const malzemeFiyat = 5;
+  const secenekler = [
+    "Yeşil Biber",
+    "Jalepeono",
+    "Zeytin",
+    "Mısır",
+    "Sosis",
+    "Sucuk",
+    "Sarımsak",
+    "Soğan",
+    "Ananas",
+    "Salam",
+    "Kanada Jambonu",
+    "Tavuk Izgara",
+    "Kabak",
+  ];
+  const [malzeme, setMalzeme] = useState([]);
+  const toggleMalzeme = (item) => {
+    if (malzeme.includes(item)) {
+      setMalzeme((arr) => arr.filter((i) => i !== item));
+    } else {
+      if (malzeme.length < maxMalzeme) {
+        setMalzeme((arr) => [...arr, item]);
+      } else {
+        toast.error(`En fazla ${maxMalzeme} Malzeme Ekleyebilirsiniz!`, {
+          position: "bottom-right",
+          autoClose: 2500,
+        });
+      }
+    }
+  };
+  const isValid = malzeme.length >= minMalzeme && malzeme.length <= maxMalzeme;
   return (
     <>
       <Header />
@@ -75,7 +109,23 @@ function Order() {
           </form>
         </div>
       </div>
-      <Select />
+      <div className="container">
+        <h3>Ek Malzemeler</h3>
+        <p>En fazla {maxMalzeme} Malzeme Seçebilirsiniz. 5₺</p>
+        <div className="malzeme-container">
+          {secenekler.map((item) => (
+            <label key={item}>
+              <input
+                type="checkbox"
+                checked={malzeme.includes(item)}
+                onChange={() => toggleMalzeme(item)}
+              />
+              {item}
+            </label>
+          ))}
+        </div>
+        <ToastContainer />
+      </div>
     </>
   );
 }

@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import workintech from '/workintech.svg'
 import Order from './components/Order'
 import Header from './components/Header'
-import Select from './components/MalzemeSelect'
 
 
 function App() {
